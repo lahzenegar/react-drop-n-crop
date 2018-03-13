@@ -1,7 +1,7 @@
 {
   "name": "@lahzenegar/react-drop-n-crop",
   "version": "0.2.0",
-  "description": "A combined implementation of react-dropzone and react-cropper (also added custome title and sub-title props)",
+  "description": "A combined implementation of react-dropzone and react-cropper (translated to farsi)",
   "repository": {
     "type": "git",
     "url": "https://github.com/lahzenegar/react-drop-n-crop.git"
@@ -33,6 +33,7 @@
     "storybook-deploy": "npm run storybook-build && storybook-to-ghpages"
   },
   "dependencies": {
+    "babel": "^6.23.0",
     "classnames": "^2.2.5",
     "lodash.includes": "^4.3.0",
     "prop-types": "^15.5.8",
@@ -43,7 +44,7 @@
     "@kadira/storybook": "^2.35.3",
     "@kadira/storybook-deployer": "^1.2.0",
     "autoprefixer-stylus": "^0.13.0",
-    "babel-cli": "^6.24.1",
+    "babel-cli": "^6.26.0",
     "babel-eslint": "^7.2.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",

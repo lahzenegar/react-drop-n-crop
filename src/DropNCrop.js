@@ -41,10 +41,7 @@ class DropNCrop extends Component {
   };
 
   onCrop = () => {
-    const {
-      value,
-      onChange,
-    } = this.props;
+    const { value, onChange } = this.props;
 
     if (typeof this.cropperRef.getCroppedCanvas() !== 'undefined') {
       onChange({
@@ -55,11 +52,7 @@ class DropNCrop extends Component {
   };
 
   onDrop = files => {
-    const {
-      onChange,
-      maxFileSize,
-      allowedFileTypes,
-    } = this.props;
+    const { onChange, maxFileSize, allowedFileTypes } = this.props;
     const fileSizeValidation = fileSizeLessThan(maxFileSize)(files);
     const fileTypeValidation = fileType(allowedFileTypes)(files);
 
@@ -103,56 +96,56 @@ class DropNCrop extends Component {
 
     return (
       <div className={classNames(dropNCropClasses)}>
-        {value && value.src
-          ? <Cropper
-              ref={input => {
-                this.cropperRef = input;
-              }}
-              src={value && value.src}
-              style={{
-                height: canvasHeight,
-                width: canvasWidth,
-              }}
-              cropend={this.onCrop} // Only use the cropend method- it will reduce the callback/setState lag while cropping
-              {...cropperOptions}
-            />
-          : <Dropzone
-              className="dropzone"
-              activeClassName="dropzone--active"
-              onDrop={this.onDrop}
-              style={{
-                height: canvasHeight,
-                width: canvasWidth,
-              }}
-            >
-              <div key="dropzone-instructions">
-                {!instructions
-                  ? <div className="dropzone-instructions">
-                      <div className="dropzone-instructions--main">
-                        Drag-n-drop a file or click to add an image
-                      </div>
-                      <div className="dropzone-instructions--sub">
-                        Accepted file types:
-                        {' '}
-                        {allowedFileTypes
-                          .map(mimeType => `.${mimeType.split('/')[1]}`)
-                          .join(', ')}
-                      </div>
-                      <div className="dropzone-instructions--sub">
-                        Max file size: {bytesToSize(maxFileSize)}
-                      </div>
-                    </div>
-                  : instructions}
-              </div>
-              {value && value.error
-                ? <div
-                    key="dropzone-validation"
-                    className="dropzone-validation"
-                  >
-                    {value && value.error}
+        {value && value.src ? (
+          <Cropper
+            ref={input => {
+              this.cropperRef = input;
+            }}
+            src={value && value.src}
+            style={{
+              height: canvasHeight,
+              width: canvasWidth,
+            }}
+            cropend={this.onCrop} // Only use the cropend method- it will reduce the callback/setState lag while cropping
+            {...cropperOptions}
+          />
+        ) : (
+          <Dropzone
+            className="dropzone"
+            activeClassName="dropzone--active"
+            onDrop={this.onDrop}
+            style={{
+              height: canvasHeight,
+              width: canvasWidth,
+            }}
+          >
+            <div key="dropzone-instructions">
+              {!instructions ? (
+                <div className="dropzone-instructions">
+                  <div className="dropzone-instructions--main">
+                    تصویر مورد نظر را انتخاب و داخل این کادر رها کنید.
                   </div>
-                : null}
-            </Dropzone>}
+                  <div className="dropzone-instructions--sub">
+                    نوع فایل قابل آپلود{' '}
+                    {allowedFileTypes
+                      .map(mimeType => `.${mimeType.split('/')[1]}`)
+                      .join(', ')}
+                  </div>
+                  <div className="dropzone-instructions--sub">
+                    حجم مجاز فایل {bytesToSize(maxFileSize)}
+                  </div>
+                </div>
+              ) : (
+                instructions
+              )}
+            </div>
+            {value && value.error ? (
+              <div key="dropzone-validation" className="dropzone-validation">
+                {value && value.error}
+              </div>
+            ) : null}
+          </Dropzone>
+        )}
       </div>
     );
   }
