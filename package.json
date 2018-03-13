@@ -1,15 +1,15 @@
 {
-  "name": "@synapsestudios/react-drop-n-crop",
+  "name": "@lahzenegar/react-drop-n-crop",
   "version": "0.2.0",
-  "description": "A combined implementation of react-dropzone and react-cropper",
+  "description": "A combined implementation of react-dropzone and react-cropper (also added custome title and sub-title props)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/synapsestudios/react-drop-n-crop.git"
+    "url": "https://github.com/lahzenegar/react-drop-n-crop.git"
   },
   "bugs": {
-    "url": "https://github.com/synapsestudios/react-drop-n-crop/issues"
+    "url": "https://github.com/lahzenegar/react-drop-n-crop/issues"
   },
-  "author": "Synapse Studios",
+  "author": "Lahzenegar",
   "license": "MIT",
   "main": "lib/index.js",
   "keywords": [
