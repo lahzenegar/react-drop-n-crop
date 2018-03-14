@@ -123,16 +123,29 @@ class DropNCrop extends Component {
               {!instructions ? (
                 <div className="dropzone-instructions">
                   <div className="dropzone-instructions--main">
-                    تصویر مورد نظر را انتخاب و داخل این کادر رها کنید.
+                    <svg width="16px" height="16px" viewBox="0 0 24 24">
+                      <path
+                        fill="#757575"
+                        d="M18.5,10.5h-5v-5C13.5,4.7,12.8,4,12,4s-1.5,0.7-1.5,1.5v5h-5C4.7,10.5,4,11.2,4,12s0.7,1.5,1.5,1.5h5v5c0,0.8,0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5v-5h5c0.8,0,1.5-0.7,1.5-1.5S19.3,10.5,18.5,10.5z"
+                      />
+                    </svg>
+                    <div>انتخاب تصویر</div>
                   </div>
                   <div className="dropzone-instructions--sub">
-                    نوع فایل قابل آپلود{' '}
-                    {allowedFileTypes
-                      .map(mimeType => `.${mimeType.split('/')[1]}`)
-                      .join(', ')}
-                  </div>
-                  <div className="dropzone-instructions--sub">
-                    حجم مجاز فایل {bytesToSize(maxFileSize)}
+                    <div>
+                      تصویر مورد نظر را انتخاب و داخل این کادر رها کنید.
+                    </div>
+                    <div>
+                      نوع فایل قابل آپلود
+                      <span>
+                        {allowedFileTypes
+                          .map(mimeType => `.${mimeType.split('/')[1]}`)
+                          .join(', ')}
+                      </span>
+                    </div>
+                    <div>
+                      حجم مجاز فایل <span>{bytesToSize(maxFileSize)}</span>
+                    </div>
                   </div>
                 </div>
               ) : (
