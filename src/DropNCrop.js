@@ -148,15 +148,18 @@ class DropNCrop extends Component {
                       حجم مجاز فایل <span>{bytesToSize(maxFileSize)}</span>
                     </div>
                   </div>
+                  {value && value.error ? (
+                    <div
+                      key="dropzone-validation"
+                      className="dropzone-validation"
+                    >
+                      {value && value.error}
+                    </div>
+                  ) : null}
                 </div>
               ) : (
                 instructions
               )}
-              {value && value.error ? (
-                <div key="dropzone-validation" className="dropzone-validation">
-                  {value && value.error}
-                </div>
-              ) : null}
             </div>
           </Dropzone>
         )}
