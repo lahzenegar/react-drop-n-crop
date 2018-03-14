@@ -4,7 +4,7 @@
   "description": "A combined implementation of react-dropzone and react-cropper (translated to farsi)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lahzenegar/react-drop-n-crop.git"
+    "url": "git+https://github.com/lahzenegar/react-drop-n-crop.git"
   },
   "bugs": {
     "url": "https://github.com/lahzenegar/react-drop-n-crop/issues"
@@ -65,5 +65,9 @@
   "peerDependencies": {
     "react": "^15.3.0",
     "react-dom": "^15.3.0"
+  },
+  "homepage": "https://github.com/lahzenegar/react-drop-n-crop#readme",
+  "directories": {
+    "lib": "lib"
   }
 }
