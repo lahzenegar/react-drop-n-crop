@@ -152,12 +152,12 @@ class DropNCrop extends Component {
               ) : (
                 instructions
               )}
+              {value && value.error ? (
+                <div key="dropzone-validation" className="dropzone-validation">
+                  {value && value.error}
+                </div>
+              ) : null}
             </div>
-            {value && value.error ? (
-              <div key="dropzone-validation" className="dropzone-validation">
-                {value && value.error}
-              </div>
-            ) : null}
           </Dropzone>
         )}
       </div>
