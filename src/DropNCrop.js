@@ -133,7 +133,8 @@ class DropNCrop extends Component {
                   </div>
                   <div className="dropzone-instructions--sub">
                     <div>
-                      تصویر مورد نظر را انتخاب و داخل این کادر رها کنید.
+                      می‌توانید تصویر مورد نظر را انتخاب و داخل این کادر رها
+                      کنید.
                     </div>
                     <div>
                       نوع فایل قابل آپلود
